@@ -3,6 +3,10 @@ import { Menu } from '../models/Menu.js';
 import { MonAn } from '../models/MonAn.js';
 
 var menu = new Menu();
+// Chạy trang food.html => tạo menu và lấy các giá trị đã lưu từ storage ra
+menu.layMenu(); 
+console.log(menu);
+
 document.querySelector('#btnThemMon').onclick = () => {
     var monAn = new MonAn();
     //Dùng es6 để đưa thông tin từ giao diện vào đối tượng monAn
@@ -23,7 +27,6 @@ document.querySelector('#btnThemMon').onclick = () => {
             console.log(id, value);
         }
     }
-
     //Dom đến tất cả thẻ li => in thông tin
     var arrLi = document.querySelectorAll('#thongTinMonAn li:not(:first-child)');
     for (let li of arrLi) {
@@ -47,29 +50,15 @@ document.querySelector('#btnThemMon').onclick = () => {
 
     //Sau khi lấy thông tin món ăn thì gọi hàm thêm món ăn vào menu
     menu.themMonAn(monAn);
-
+    //Sau khi thêm món ăn gọi phương thức để lưu món ăn vào localstorage
+    menu.luuMenu();
     console.log(menu);
 
 }
 
+// function luuStorage() {
 
-
-// //
-
-// let object = {
-//     thuocTinh1: {
-//         id: 'a',
-//         name:'b'
-//     },
-//     thuocTinh2: [
-
-//     ],
-//     thuocTinh3: {
-//         arr: [
-
-//         ],
-//         thuocTinh: {}
-//     }
-
-
+//     //Lưu thông tin mảng các món ăn vào storage
+//     let sMenu = JSON.stringify(menu.mangMonAn);
+//     localStorage.setItem('menu',sMenu)
 // }

@@ -13,7 +13,7 @@ export class MonAn {
 
     }
 
-    tinhGiaKhuyenMai = () => {
+    tinhGiaKhuyenMai = function () {
         return this.giaMon - (this.giaMon * this.khuyenMai / 100);
     }
 }
