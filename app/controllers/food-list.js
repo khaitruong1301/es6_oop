@@ -86,3 +86,12 @@ document.querySelector('#btnCapNhat').onclick = function (){
 }
 
 
+//Chức năng filter loại món ăn
+
+document.querySelector('#selLoai').onchange = function (){
+    //Lấy giá trị người dùng select từ giao diện
+    var value = document.querySelector('#selLoai').value;
+    var result = menu.locMonAn(value);
+
+    renderTableMonAn(result);
+}

@@ -67,6 +67,15 @@ export class Menu {
         return undefined;
     }
 
+    locMonAn = function(maLoaiMenu) { //select người dùng từ giao diện
+        if(maLoaiMenu === 'all' || maLoaiMenu ==='') {
+            return this.mangMonAn;
+        }
+
+        var mangMonAn = this.mangMonAn.filter(monAn => monAn.maLoai == maLoaiMenu);
+
+        return mangMonAn;
+    }
 
 
 
